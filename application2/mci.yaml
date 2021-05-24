@@ -1,0 +1,11 @@
+apiVersion: networking.gke.io/v1
+kind: MultiClusterIngress
+metadata:
+  name: istio-mci-ingress
+  namespace: istio-system
+spec:
+  template:
+    spec:
+      backend:
+        serviceName: istio-mcs
+        servicePort: 80
